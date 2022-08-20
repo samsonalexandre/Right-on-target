@@ -15,11 +15,12 @@ class ViewController: UIViewController {
     //загаданное число
     var number: Int = 0
     //раунд
-    var round: Int = 0
+    var round: Int = 1
     // сумма очков за раунд
     var points: Int = 0
     
     @IBAction func checkNumber() {
+            //получаем значение на слайдере
         //если игра только начинается
         if self.round == 0 {
             //генерируем случайное число
@@ -60,6 +61,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDidLoad")
+        //генерируем случайное число
+        self.number = Int.random(in: 1...50)
+        //устанавливаем загадочное число в метку
+        self.label.text = String(self.number)
         
     }
 
